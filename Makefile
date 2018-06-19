@@ -1,7 +1,7 @@
 CXX=g++
 CXXFLAGS=-g -Wall -std=c++11
 PROG=TestQR
-SRC=QR.cpp Example.cpp
+SRC=MatrixOperations.cpp QR.cpp SVD.cpp Example.cpp
 
 all: $(PROG)
 
