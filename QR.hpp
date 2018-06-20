@@ -43,9 +43,14 @@ public:
 	static QRSTATUS decomp(
 		std::vector<std::vector<double> >& outQ,
 		std::vector<std::vector<double> >& outR,
-		const std::vector<std::vector<double> >& inA
+		const std::vector<std::vector<double> >& inA,
+		const int& onlyR = 0
 	);
 
-
+private:
+	static std::vector<std::vector<double> > multiplyHousehold(
+		std::vector<std::vector<double> > A, 
+		const std::vector<double>& x
+	);
 };
 #endif
