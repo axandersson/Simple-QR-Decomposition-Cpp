@@ -79,6 +79,28 @@ int main()
 		MXOP::printMatrix(MXOP::multiply(V, MXOP::transpose(V)));
 		std::cout << std::endl << "U * U': " << std::endl;
 		MXOP::printMatrix(MXOP::multiply(U, MXOP::transpose(U)));
+
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "SVD ONLY U" << std::endl;
+		SVD::decomp(U, S, V, matrix, SVD::SvdOptions::ONLY_U);
+		std::cout << "Original matrix" << std::endl;
+		MXOP::printMatrix(matrix);
+		std::cout << std::endl << "U: " << std::endl;
+		MXOP::printMatrix(U);
+		std::cout << std::endl << "S: " << std::endl;
+		MXOP::printMatrix(S);
+		std::cout << std::endl << "U * U': " << std::endl;
+		MXOP::printMatrix(MXOP::multiply(U, MXOP::transpose(U)));
+
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "SVD ONLY V" << std::endl;
+		SVD::decomp(U, S, V, matrix,SVD::SvdOptions::ONLY_V);
+		std::cout << "Original matrix" << std::endl;
+		MXOP::printMatrix(matrix);
+		std::cout << std::endl << "V: " << std::endl;
+		MXOP::printMatrix(V);
+		std::cout << std::endl << "V * V': " << std::endl;
+		MXOP::printMatrix(MXOP::multiply(V, MXOP::transpose(V)));
 	}
 
 	return 0;

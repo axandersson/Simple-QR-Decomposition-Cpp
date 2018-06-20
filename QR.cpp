@@ -44,7 +44,10 @@ QR::QRSTATUS QR::decomp(
 		}
 		outR = multiplyHousehold(outR, x);
     }
-    outQ = MXOP::transpose(outQ);
+
+	if(!onlyR)
+		outQ = MXOP::transpose(outQ);
+	
 	return QR::QRSTATUS::QR_SUCCES;
 }
 
